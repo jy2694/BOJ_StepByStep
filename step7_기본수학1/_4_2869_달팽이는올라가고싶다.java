@@ -1,0 +1,21 @@
+package step7;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class _4_2869_달팽이는올라가고싶다 {
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    //private static final StringBuilder sb = new StringBuilder();
+    public static void main(String[] args) throws IOException {
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        int V = Integer.parseInt(st.nextToken());
+        int n = (V-B)/(A-B);
+        if((V-B)%(A-B)!=0)
+            n++;
+        System.out.print(n);
+    }
+}
