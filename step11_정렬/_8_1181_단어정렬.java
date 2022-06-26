@@ -1,0 +1,28 @@
+package step11;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class _8_1181_단어정렬 {
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static final StringBuilder sb = new StringBuilder();
+    public static void main(String[] args) throws IOException {
+        int N = Integer.parseInt(br.readLine());
+        String[] lines = new String[N];
+        for(int i = 0; i < N; i ++) lines[i] = br.readLine();
+        Arrays.sort(lines, (x,y) -> {
+                if(x.length()==y.length())
+                    return x.compareTo(y);
+                else
+                    return x.length()-y.length();
+            }
+        );
+        sb.append(lines[0]).append("\n");
+        for(int i = 1; i < N; i ++)
+            if(!lines[i].equals(lines[i-1]))
+                sb.append(lines[i]).append("\n");
+        System.out.println(sb);
+    }
+}
